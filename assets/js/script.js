@@ -58,14 +58,7 @@ const fontSizeInput = document.getElementById("font-size");
 const textModalEscapeEl = document.getElementById("text-modal-escape");
 
 // text colors
-const fontLight = document.getElementById("font-light");
-const fontMedium = document.getElementById("font-medium");
-const fontDark = document.getElementById("font-dark");
-const fontColor = document.getElementById("font-color");
-const fontDarkColor = document.getElementById("font-dark-color");
-const fontGreen = document.getElementById("font-green");
-const fontYellow = document.getElementById("font-yellow");
-const fontRed = document.getElementById("font-red");
+const fontColorBtns = document.querySelectorAll(".font-color");
 
 // textarea
 const textArea = document.getElementById("text");
@@ -86,6 +79,7 @@ const getStorage = () => {
   fontFamilySelect.value = localStorage.getItem("font");
   textArea.style.fontSize = `${localStorage.getItem("font-size")}px`;
   fontSizeInput.value = localStorage.getItem("font-size");
+  textArea.classList.add(`${localStorage.getItem("font-color")}`);
   textArea.focus();
   textArea.setSelectionRange(textArea.value.length, textArea.value.length);
 };
@@ -182,6 +176,17 @@ const clearTextAreaFont = () => {
   textArea.classList.remove("mono");
   textArea.classList.remove("cursive");
   textArea.classList.remove("cursive-alt");
+};
+
+const clearTextAreaColor = () => {
+  textArea.classList.remove("font-light");
+  textArea.classList.remove("font-medium");
+  textArea.classList.remove("font-dark");
+  textArea.classList.remove("font-color");
+  textArea.classList.remove("font-dark-color");
+  textArea.classList.remove("font-green");
+  textArea.classList.remove("font-yellow");
+  textArea.classList.remove("font-red");
 };
 
 // click events
@@ -334,3 +339,11 @@ document.onload = getStorage();
 
 // keypress handler
 document.addEventListener("keydown", function (event) {});
+fontColorBtns.forEach((btn) =>
+  btn.addEventListener("click", function (event) {
+    clearTextAreaColor();
+    textModalFunction();
+    localStorage.setItem("font-color", event.target.id);
+    textArea.classList.add(`${event.target.id}`);
+  })
+);

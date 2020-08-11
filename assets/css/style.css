@@ -268,28 +268,28 @@ header {
 .cursive-alt {
   font-family: "Shadows Into Light", cursive; }
 
-.light-font {
+.font-light {
   color: #b9bfca; }
 
-.medium-font {
+.font-medium {
   color: #818f99; }
 
-.dark-font {
+.font-dark {
   color: #677680; }
 
-.color-font {
+.font-color {
   color: #7bb3e2; }
 
-.dark-color-font {
+.font-dark-color {
   color: #3f5979; }
 
-.green-font {
+.font-green {
   color: #5ab07c; }
 
-.yellow-font {
+.font-yellow {
   color: #d7a044; }
 
-.red-font {
+.font-red {
   color: #f44336; }
 
 #font-light {
