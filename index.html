@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spiffynotes</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div id="title-bar">
+          <span>Spiffnotes</span>
+          <span id="spacer"> — </span>
+          <span id="working-title"></span>
+        </div>
+        <div id="text-menu-container">
+          <div id="text-menu">
+            <div>
+              <button id="file-menu-btn" class="menu-item">
+                <span class="menu-title">File</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="down-arrow"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul id="file-menu-list" class="menu-list hidden">
+                <li>
+                  <button id="file-menu-new" class="menu-item">
+                    New <span class="shortcut-key">Ctrl + N</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="file-menu-save" class="menu-item">
+                    Save <span class="shortcut-key">Ctrl + S</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="file-menu-open" class="menu-item">
+                    Open <span class="shortcut-key">Ctrl + O</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="file-menu-print" class="menu-item">
+                    Print <span class="shortcut-key">Ctrl + P</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button id="edit-menu-btn" class="menu-item">
+                <span class="menu-title">Edit</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="down-arrow"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul id="edit-menu-list" class="menu-list hidden">
+                <li>
+                  <button id="edit-menu-undo" class="menu-item">
+                    Undo <span class="shortcut-key">Ctrl + Z</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="edit-menu-redo" class="menu-item">
+                    Redo <span class="shortcut-key">Ctrl + Y</span>
+                  </button>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>
+                  <button id="edit-menu-cut" class="menu-item">
+                    Cut <span class="shortcut-key">Ctrl + X</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="edit-menu-copy" class="menu-item">
+                    Copy <span class="shortcut-key">Ctrl + C</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="edit-menu-paste" class="menu-item">
+                    Paste <span class="shortcut-key">Ctrl + V</span>
+                  </button>
+                </li>
+                <hr />
+                <li>
+                  <button id="edit-menu-select" class="menu-item">
+                    Select all <span class="shortcut-key">Ctrl + A</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="edit-menu-find" class="menu-item">
+                    Find and Replace <span class="shortcut-key">Ctrl + F</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button id="insert-menu-btn" class="menu-item">
+                <span class="menu-title">Insert</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="down-arrow"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul id="insert-menu-list" class="menu-list hidden">
+                <li>
+                  <button id="insert-menu-date" class="menu-item">
+                    Date or Time <span class="shortcut-key">Ctrl + T</span>
+                  </button>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>
+                  <button id="insert-menu-special" class="menu-item">
+                    Special Character <span class="shortcut-key">Ctrl + E</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button id="view-menu-btn" class="menu-item">
+                <span class="menu-title">View</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="down-arrow"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul id="view-menu-list" class="menu-list hidden">
+                <li>
+                  <button id="view-menu-dark" class="menu-item">
+                    Dark Mode <span class="shortcut-key">Ctrl + D</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="view-menu-light" class="menu-item">
+                    Light Mode <span class="shortcut-key">Ctrl + L</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button id="help-menu-btn" class="menu-item">
+                <span class="menu-title">Help</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="down-arrow"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul id="help-menu-list" class="menu-list hidden">
+                <li>
+                  <button id="help-menu-shortcuts" class="menu-item">
+                    Shortcuts <span class="shortcut-key">Ctrl + N</span>
+                  </button>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>
+                  <button id="help-menu-homepage" class="menu-item">
+                    Homepage <span class="shortcut-key">Ctrl + S</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div id="menu-escape" class="hidden"></div>
+          </div>
+        </div>
+        <div id="icon-menu">
+          <button id="new-file" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+              ></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+          </button>
+
+          <button id="open-file" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+          </button>
+
+          <button id="save-file" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+              ></path>
+              <polyline points="17 21 17 13 7 13 7 21"></polyline>
+              <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+          </button>
+
+          <button id="print-file" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path
+                d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+              ></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+          </button>
+
+          <button id="undo" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 14 4 9 9 4"></polyline>
+              <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+            </svg>
+          </button>
+
+          <button id="redo" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 14 20 9 15 4"></polyline>
+              <path d="M4 20v-7a4 4 0 0 1 4-4h12"></path>
+            </svg>
+          </button>
+
+          <button id="find" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              class="icon"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div>
+            <div id="text-modal-container">
+              <button id="text-modal-btn" class="menu-item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  class="icon"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                  <line x1="9" y1="20" x2="15" y2="20"></line>
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                </svg>
+              </button>
+              <ul id="text-modal" class="hidden">
+                <li>
+                  <select name="font-family" id="font-family">
+                    <option value="sans" class="sans">Roboto</option>
+                    <option value="sans-alt" class="sans-alt">Open Sans</option>
+                    <option value="serif" class="serif">EB garamond</option>
+                    <option value="serif-alt" class="serif-alt"
+                      >Roboto Slab</option
+                    >
+                    <option value="mono" class="mono">Roboto Mono</option>
+                    <option value="cursive" class="cursive"
+                      >Indie Flower</option
+                    >
+                    <option value="cursive-alt" class="cursive-alt"
+                      >Shadows Into Light</option
+                    >
+                  </select>
+                </li>
+                <li class="flex-row">
+                  <button id="font-bold" class="menu-item">B</button>
+                  <button id="font-italic" class="menu-item">I</button>
+                  <label for="font-size">
+                    <span>Font Size</span>
+                    <input
+                      type="number"
+                      name="font-size"
+                      id="font-size"
+                      min="1"
+                      max="200"
+                    />
+                  </label>
+                </li>
+                <li>
+                  <div id="color-pallet">
+                    <button id="font-light" class="font-color"></button>
+                    <button id="font-medium" class="font-color"></button>
+                    <button id="font-dark" class="font-color"></button>
+                    <button id="font-color" class="font-color"></button>
+                    <button id="font-dark-color" class="font-color"></button>
+                    <button id="font-green" class="font-color"></button>
+                    <button id="font-yelllow" class="font-color"></button>
+                    <button id="font-red" class="font-color"></button>
+                  </div>
+                </li>
+              </ul>
+              <div id="text-modal-escape" class="hidden"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <textarea id="text"></textarea>
+      </main>
+      <footer>
+        <div>
+          <span id="word-count">25</span>
+          <span id="word-count-mod"> Words</span>
+        </div>
+        <div>
+          <span id="author">Astrid</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,514;1,615&family=Indie+Flower&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto+Mono:ital,wght@0,423;1,423&family=Roboto+Slab:wght@531&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&display=swap");
+@import "reset";
+
+$sans: "Roboto", sans-serif;
+$sans-alt: "Open Sans", sans-serif;
+$serif: "EB Garamond", serif;
+$serif-alt: "Roboto Slab", serif;
+$mono: "Roboto Mono", monospace;
+$cursive: "Indie Flower", cursive;
+$cursive-alt: "Shadows Into Light", cursive;
+
+$light: #f3f4f6;
+$light-d: darken($light, 10%);
+$light-dd: darken($light, 20%);
+$daccent: #677680;
+$daccent-l: lighten($daccent, 10%);
+$color: #7bb3e2;
+$d-color: #3f5979;
+$success: #5ab07c;
+$warning: #d7a044;
+$danger: #f44336;
+
+* {
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $sans;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: $d-color;
+}
+
+textarea {
+  font-family: $sans-alt;
+}
+
+#container {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+header {
+  margin-top: 2rem;
+  background: $light-d;
+  color: $daccent;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+#title-bar {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: $light-dd;
+  border-radius: inherit;
+}
+
+#text-menu {
+  display: flex;
+  width: 100%;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+#text-menu-container {
+  position: relative;
+  z-index: 10;
+}
+
+#menu-escape {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#text-modal-container {
+  position: relative;
+  z-index: 0;
+}
+
+#text-modal-btn {
+  z-index: 20;
+}
+
+#text-modal {
+  z-index: 10;
+  width: 16rem;
+}
+
+#text-modal-escape {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#icon-menu {
+  display: flex;
+  width: 100%;
+  padding: 0.1rem;
+  box-sizing: border-box;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 0.1rem;
+  padding: 0.5rem 0.5rem;
+  background-color: $light-d;
+  color: $daccent;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $d-color;
+    background: $color;
+  }
+
+  .down-arrow {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  justify-content: space-between;
+}
+
+.menu-list {
+  position: absolute;
+  background: $light-d;
+  padding: 0.25rem 0;
+  border-bottom-right-radius: 0.1rem;
+  border-bottom-left-radius: 0.1rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem rgba($daccent, 0.1);
+
+  .menu-item {
+    justify-content: space-between;
+    width: 100%;
+
+    .shortcut-key {
+      margin-left: 0.5rem;
+      color: darken($light-d, 10%);
+    }
+  }
+}
+
+.sans {
+  font-family: $sans;
+}
+.sans-alt {
+  font-family: $sans-alt;
+}
+.serif {
+  font-family: $serif;
+}
+.serif-alt {
+  font-family: $serif-alt;
+}
+.mono {
+  font-family: $mono;
+}
+.cursive {
+  font-family: $cursive;
+}
+.cursive-alt {
+  font-family: $cursive-alt;
+}
+
+.light-font {
+  color: $light-dd;
+}
+.medium-font {
+  color: $daccent-l;
+}
+.dark-font {
+  color: $daccent;
+}
+.color-font {
+  color: $color;
+}
+.dark-color-font {
+  color: $d-color;
+}
+.green-font {
+  color: $success;
+}
+.yellow-font {
+  color: $warning;
+}
+.red-font {
+  color: $danger;
+}
+
+#font-light {
+  background: $light-dd;
+}
+#font-medium {
+  background: $daccent-l;
+}
+#font-dark {
+  background: $daccent;
+}
+#font-color {
+  background: $color;
+}
+#font-dark-color {
+  background: $d-color;
+}
+#font-green {
+  background: $success;
+}
+#font-yellow {
+  background: $warning;
+}
+#font-red {
+  background: $danger;
+}
+
+hr {
+  border: 0.01rem solid darken($light-d, 5%);
+  margin: 0.25rem 0;
+}
+
+#text-modal {
+  position: absolute;
+  background-color: $light-d;
+  padding: 1rem;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem rgba($daccent, 0.1);
+
+  select {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    background-color: $light-dd;
+    border: none;
+    vertical-align: middle;
+    outline: none;
+    margin-bottom: 0.25rem;
+    color: $daccent;
+
+    &:focus {
+      background: $light;
+    }
+
+    option {
+      padding: 0.25rem;
+      border: none;
+      box-shadow: none;
+
+      &:hover,
+      &:focus {
+        background: $color;
+      }
+    }
+  }
+
+  input {
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.25rem;
+    background: $light;
+    border: none;
+    outline: none;
+    font-family: $sans;
+    color: $daccent;
+  }
+
+  label {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: $sans;
+    font-size: 0.8rem;
+  }
+
+  #color-pallet {
+    display: flex;
+    justify-content: space-between;
+    .font-color {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: none;
+      border-radius: 0.1rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 75vh;
+  color: $daccent;
+  background: $light;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  resize: none;
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  color: $daccent;
+  background: $light-dd;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+@media only screen and (orientation: landscape) {
+  #container {
+    width: 80%;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+}
